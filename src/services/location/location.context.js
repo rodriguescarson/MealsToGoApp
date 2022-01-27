@@ -29,6 +29,7 @@ export const LocationContextProvider = ({ children }) => {
             .catch(err => {
                 setIsLoading(false);
                 setError(err)
+                console.log(err)
             })
     }, [keyword])
 

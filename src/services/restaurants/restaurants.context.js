@@ -37,7 +37,7 @@ export const RestaurantsContextProvider = ({ children }) => {
       const locationString = `${location.lat},${location.lng}`
       retrieveRestaurants(locationString);
     }
-  }, []);
+  }, [location]);
 
   return (
     <RestaurantsContext.Provider
