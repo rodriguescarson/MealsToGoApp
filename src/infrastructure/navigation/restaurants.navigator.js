@@ -5,9 +5,10 @@ const RestaurantStack = createStackNavigator()
 import { RestaurantDetailScreen } from '../../features/restaurants/screens/restaurant-detail.screen'
 export const RestaurantsNavigator = () => {
     return (
-        <RestaurantStack.Navigator headerMode="none"
+        <RestaurantStack.Navigator
             screenOptions={{
                 ...TransitionPresets.ModalPresentationIOS,
+                headerShown: false
             }}
         >
             <RestaurantStack.Screen
