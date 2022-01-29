@@ -5,10 +5,6 @@ import { ThemeProvider } from "styled-components";
 import { Navigation } from "./src/infrastructure/navigation/index";
 import { theme } from "./src/infrastructure/theme";
 
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavourtiesContextProvider } from "./src/services/favourites/favourites.context";
-
 import {
   useFonts as useOswald,
   Oswald_400Regular,
@@ -17,6 +13,7 @@ import {
   useFonts as useLato,
   Lato_400Regular
 } from "@expo-google-fonts/lato";
+import { AuthenticationContext, AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -34,13 +31,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <FavourtiesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavourtiesContextProvider>
+        <AuthenticationContextProvider>
+          <Navigation />
+        </AuthenticationContextProvider>
       </ThemeProvider>
 
       <ExpoStatusBar style="auto" />
