@@ -25,7 +25,7 @@
       "package": "com.rodriguescarson.MealsToGo"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }

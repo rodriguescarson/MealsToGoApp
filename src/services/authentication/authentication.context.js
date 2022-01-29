@@ -4,14 +4,7 @@ import React, { useState, createContext } from "react";
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
-const firebaseApp = initializeApp({
-    apiKey: "AIzaSyApcTJqLN5H21F6tt9bT4ZMPZbcGUaGOjQ",
-    authDomain: "mealstogo-bbcf1.firebaseapp.com",
-    projectId: "mealstogo-bbcf1",
-    storageBucket: "mealstogo-bbcf1.appspot.com",
-    messagingSenderId: "322650187059",
-    appId: "1:322650187059:web:243d87c7e12a28ae608a46"
-});
+const firebaseApp = initializeApp(require('../../../firebase.config.json'));
 const auth = getAuth(firebaseApp);
 
 
@@ -36,7 +29,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log("user logged in")
+
                 setUser(user);
                 setIsLoading(false);
             })
@@ -57,7 +50,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user)
+
                 setUser(user);
                 setIsLoading(false);
             })
