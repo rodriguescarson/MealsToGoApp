@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ScrollView } from "react-native";
-import { List } from "react-native-paper";
+import { List, Divider } from "react-native-paper";
 
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component'
 import { SafeArea } from '../../../components/utility/safe-area.component'
@@ -23,9 +23,11 @@ export const RestaurantDetailScreen = ({ route }) => {
                         expanded={breakfastExpanded}
                         onPress={() => setBreakfastExpanded(!breakfastExpanded)}
                     >
-                        <List.Item title="Eggs Benedict" />
+                        <List.Item title="Eggs Benedict" />          <Divider />
+
                         <List.Item title="Classic Breakfast" />
                     </List.Accordion>
+                    <Divider />
 
                     <List.Accordion
                         title="Lunch"
@@ -33,10 +35,14 @@ export const RestaurantDetailScreen = ({ route }) => {
                         expanded={lunchExpanded}
                         onPress={() => setLunchExpanded(!lunchExpanded)}
                     >
-                        <List.Item title="Burger w/ Fries" />
-                        <List.Item title="Steak Sandwich" />
+                        <List.Item title="Burger w/ Fries" />          <Divider />
+
+                        <List.Item title="Steak Sandwich" />          <Divider />
+
                         <List.Item title="Mushroom Soup" />
+
                     </List.Accordion>
+                    <Divider />
 
                     <List.Accordion
                         title="Dinner"
@@ -44,10 +50,14 @@ export const RestaurantDetailScreen = ({ route }) => {
                         expanded={dinnerExpanded}
                         onPress={() => setDinnerExpanded(!dinnerExpanded)}
                     >
-                        <List.Item title="Spaghetti Bolognese" />
-                        <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />
+                        <List.Item title="Spaghetti Bolognese" />          <Divider />
+
+                        <List.Item title="Veal Cutlet with Chicken Mushroom Rotini" />          <Divider />
+
                         <List.Item title="Steak Frites" />
+
                     </List.Accordion>
+                    <Divider />
 
                     <List.Accordion
                         title="Drinks"
@@ -55,10 +65,14 @@ export const RestaurantDetailScreen = ({ route }) => {
                         expanded={drinksExpanded}
                         onPress={() => setDrinksExpanded(!drinksExpanded)}
                     >
-                        <List.Item title="Coffee" />
-                        <List.Item title="Tea" />
-                        <List.Item title="Modelo" />
-                        <List.Item title="Coke" />
+                        <List.Item title="Coffee" />          <Divider />
+
+                        <List.Item title="Tea" />          <Divider />
+
+                        <List.Item title="Modelo" />          <Divider />
+
+                        <List.Item title="Coke" />          <Divider />
+
                         <List.Item title="Fanta" />
                     </List.Accordion>
                 </ScrollView>
