@@ -18,7 +18,7 @@ export const RestaurantsContextProvider = ({ children }) => {
   const retrieveRestaurants = (loc) => {
     setIsLoading(true);
     setRestaurants([])
-
+    //remove timeout for firebase
     setTimeout(() => {
       restaurantsRequest(loc)
         .then(restaurantsTransform)

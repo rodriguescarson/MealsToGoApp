@@ -9,13 +9,19 @@ export const restaurantsRequest = (location) => {
     }
     resolve(mock);
   });
+  //firebase return
+  // return fetch(
+  //   `http://localhost:5001/mealstogo-bbcf1/us-central1/placesNearby?location=${location}`
+  // ).then((res) => {
+  //   return res.json();
+  // });
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
-    restaurant.photos = restaurant.photos.map((p) => {
-      return mockImages[Math.ceil(Math.random() * (mockImages.length - 1))];
-    });
+    // restaurant.photos = restaurant.photos.map((p) => {
+    //   return mockImages[Math.ceil(Math.random() * (mockImages.length - 1))];
+    // });
     return {
       ...restaurant,
       address: restaurant.vicinity,
