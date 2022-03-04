@@ -45,7 +45,7 @@ export const SettingsScreen = ({ navigation }) => {
                 <AvatarContainer>
                     <TouchableOpacity onPress={() => navigation.navigate("CameraScreen")}>
                         {!photo ? <Avatar.Icon size={180} icon="human" backgroundColor={colors.brand.primary} /> :
-                            <Avatar.Image size={180} source={{ uri: photo }} />
+                            <Avatar.Image size={180} source={{ uri: photo || '../../../../assets/favicon.png' }} backgroundColor={colors.brand.primary} />
                         }
 
                     </TouchableOpacity>
@@ -61,7 +61,7 @@ export const SettingsScreen = ({ navigation }) => {
                         left={(props) => (
                             <List.Icon {...props} color={colors.ui.error} icon="heart" />
                         )}
-                        onPress={() => navigation.navigate("Favourites")}
+                        onPress={() => navigation.navigate("FavouritesScreen")}
                     />
                     <Spacer />
                     <SettingsItem
