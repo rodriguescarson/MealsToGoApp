@@ -1,11 +1,15 @@
 import React, { useState, createContext } from "react";
 // import { loginRequest } from "./authentication.service";
+import { getReactNativePersistence } from 'firebase/auth/react-native';
 
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, initializeAuth } from "firebase/auth";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseApp = initializeApp(require('../../../firebase.config.json'));
-const auth = getAuth(firebaseApp);
+const auth = initializeAuth(firebaseApp, {
+    persistence: getReactNativePersistence(AsyncStorage),
+});
 
 
 export const AuthenticationContext = createContext()
