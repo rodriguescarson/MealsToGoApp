@@ -53,11 +53,11 @@ export const RegisterScreen = ({ navigation }) => {
                         onChangeText={(p) => setRepeatedPassword(p)}
                     />
                 </Spacer>
-                {error && (
+                {error ? (
                     <ErrorContainer size="large">
                         <Text variant="error">{error}</Text>
                     </ErrorContainer>
-                )}
+                ) : null}
                 <Spacer size="large">
                     {!isLoading ?
                         (<AuthButton
