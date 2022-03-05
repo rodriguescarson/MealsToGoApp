@@ -13,7 +13,6 @@ import {
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
-import { isLoading } from "expo-font";
 
 export const RegisterScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");

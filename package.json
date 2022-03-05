@@ -7,7 +7,8 @@
         "web": "expo start --web",
         "eject": "expo eject",
         "format:check": "npx prettier --check \"**/*.{js,jsx,json,ts,tsx}\"",
-        "format": "npx prettier --write \"**/*.{js,jsx,json,ts,tsx}\""
+        "format": "npx prettier --write \"**/*.{js,jsx,json,ts,tsx}\"",
+        "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\""
     },
     "dependencies": {
         "@expo-google-fonts/lato": "^0.2.0",
@@ -45,7 +46,10 @@
     "devDependencies": {
         "@babel/core": "^7.12.9",
         "@react-native-community/eslint-config": "^3.0.1",
-        "@types/styled-components": "^5.1.15"
+        "@types/styled-components": "^5.1.15",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.29.3"
     },
     "private": true
 }

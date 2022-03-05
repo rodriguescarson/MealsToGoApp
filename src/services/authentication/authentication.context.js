@@ -4,7 +4,6 @@ import { getReactNativePersistence } from "firebase/auth/react-native";
 
 import { initializeApp } from "firebase/app";
 import {
-    getAuth,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     onAuthStateChanged,
@@ -44,7 +43,7 @@ export const AuthenticationContextProvider = ({ children }) => {
                 setIsLoading(false);
             })
             .catch(error => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setIsLoading(false);
                 setError(errorMessage);
@@ -65,7 +64,7 @@ export const AuthenticationContextProvider = ({ children }) => {
                 setIsLoading(false);
             })
             .catch(error => {
-                const errorCode = error.code;
+                //const errorCode = error.code;
                 const errorMessage = error.message;
                 setIsLoading(false);
                 setError(errorMessage);

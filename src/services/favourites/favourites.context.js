@@ -23,7 +23,7 @@ export const FavourtiesContextProvider = ({ children }) => {
         try {
             const jsonValue = JSON.stringify(value);
             await AsyncStorage.setItem(`@favourites-${uid}`, jsonValue);
-        } catch (e) {}
+        } catch (e) { console.log(e) }
     };
 
     const loadFavourites = async uid => {
@@ -32,7 +32,7 @@ export const FavourtiesContextProvider = ({ children }) => {
             if (value !== null) {
                 setFavourites(JSON.parse(value));
             }
-        } catch (e) {}
+        } catch (e) { console.log(e) }
     };
 
     const add = restaurant => {
