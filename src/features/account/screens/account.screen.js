@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import {
     AccountBackground,
@@ -9,7 +9,7 @@ import {
     AnimationWrapper
 } from "../components/account.styles";
 
-import LottieView from "lottie-react-native"
+import LottieView from "lottie-react-native";
 
 export const AccountScreen = ({ navigation }) => {
     return (
@@ -45,4 +45,4 @@ export const AccountScreen = ({ navigation }) => {
             </AccountContainer>
         </AccountBackground>
     );
-}
+};

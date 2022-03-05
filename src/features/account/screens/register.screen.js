@@ -8,7 +8,7 @@ import {
     AuthButton,
     AuthInput,
     ErrorContainer,
-    Title,
+    Title
 } from "../components/account.styles";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -31,7 +31,7 @@ export const RegisterScreen = ({ navigation }) => {
                     textContentType="emailAddress"
                     keyboardType="email-address"
                     autoCapitalize="none"
-                    onChangeText={(u) => setEmail(u)}
+                    onChangeText={u => setEmail(u)}
                 />
                 <Spacer size="large">
                     <AuthInput
@@ -40,7 +40,7 @@ export const RegisterScreen = ({ navigation }) => {
                         textContentType="password"
                         secureTextEntry
                         autoCapitalize="none"
-                        onChangeText={(p) => setPassword(p)}
+                        onChangeText={p => setPassword(p)}
                     />
                 </Spacer>
                 <Spacer size="large">
@@ -50,7 +50,7 @@ export const RegisterScreen = ({ navigation }) => {
                         textContentType="password"
                         secureTextEntry
                         autoCapitalize="none"
-                        onChangeText={(p) => setRepeatedPassword(p)}
+                        onChangeText={p => setRepeatedPassword(p)}
                     />
                 </Spacer>
                 {error ? (
@@ -59,16 +59,20 @@ export const RegisterScreen = ({ navigation }) => {
                     </ErrorContainer>
                 ) : null}
                 <Spacer size="large">
-                    {!isLoading ?
-                        (<AuthButton
+                    {!isLoading ? (
+                        <AuthButton
                             icon="email"
                             mode="contained"
                             onPress={() => onRegister(email, password, repeatedPassword)}
                         >
                             Register
-                        </AuthButton>)
-                        : (<ActivityIndicator> animating={true} color={Colors.blue300}</ActivityIndicator>
-                        )}
+                        </AuthButton>
+                    ) : (
+                        <ActivityIndicator>
+                            {" "}
+                            animating={true} color={Colors.blue300}
+                        </ActivityIndicator>
+                    )}
                 </Spacer>
             </AccountContainer>
             <Spacer size="large">

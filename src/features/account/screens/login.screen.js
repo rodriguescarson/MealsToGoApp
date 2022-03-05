@@ -7,11 +7,11 @@ import {
     AuthButton,
     AuthInput,
     ErrorContainer,
-    Title,
+    Title
 } from "../components/account.styles";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { AuthenticationContext } from '../../../services/authentication/authentication.context'
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { isLoaded } from "expo-font";
 
 export const LoginScreen = ({ navigation }) => {
@@ -29,7 +29,7 @@ export const LoginScreen = ({ navigation }) => {
                     textContentType="emailAddress"
                     keyboardType="email-address"
                     autoCapitalize="none"
-                    onChangeText={(u) => setEmail(u)}
+                    onChangeText={u => setEmail(u)}
                 />
                 <Spacer size="large">
                     <AuthInput
@@ -38,7 +38,7 @@ export const LoginScreen = ({ navigation }) => {
                         textContentType="password"
                         secureTextEntry
                         autoCapitalize="none"
-                        onChangeText={(p) => setPassword(p)}
+                        onChangeText={p => setPassword(p)}
                     />
                 </Spacer>
                 {error ? (
@@ -49,14 +49,19 @@ export const LoginScreen = ({ navigation }) => {
                     </ErrorContainer>
                 ) : null}
                 <Spacer size="large">
-                    {!isLoading ? (<AuthButton
-                        icon="lock-open-outline"
-                        mode="contained"
-                        onPress={() => onLogin(email, password)}
-                    >
-                        Login
-                    </AuthButton>
-                    ) : (<ActivityIndicator> animating={true} color={Colors.blue300}</ActivityIndicator>
+                    {!isLoading ? (
+                        <AuthButton
+                            icon="lock-open-outline"
+                            mode="contained"
+                            onPress={() => onLogin(email, password)}
+                        >
+                            Login
+                        </AuthButton>
+                    ) : (
+                        <ActivityIndicator>
+                            {" "}
+                            animating={true} color={Colors.blue300}
+                        </ActivityIndicator>
                     )}
                 </Spacer>
             </AccountContainer>
@@ -65,6 +70,6 @@ export const LoginScreen = ({ navigation }) => {
                     Back
                 </AuthButton>
             </Spacer>
-        </AccountBackground >
+        </AccountBackground>
     );
 };

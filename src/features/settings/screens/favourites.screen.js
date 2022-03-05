@@ -12,8 +12,8 @@ import { RestaurantList } from "../../restaurants/components/restaurant-list.sty
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
 const NoFavouritesArea = styled(SafeArea)`
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 `;
 export const FavouritesScreen = ({ navigation }) => {
     const { favourites } = useContext(FavouritesContext);
@@ -27,7 +27,7 @@ export const FavouritesScreen = ({ navigation }) => {
                         <TouchableOpacity
                             onPress={() =>
                                 navigation.navigate("RestaurantDetail", {
-                                    restaurant: item,
+                                    restaurant: item
                                 })
                             }
                         >
@@ -37,7 +37,7 @@ export const FavouritesScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     );
                 }}
-                keyExtractor={(item) => item.name}
+                keyExtractor={item => item.name}
             />
         </SafeArea>
     ) : (

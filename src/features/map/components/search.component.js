@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
-import styled from "styled-components/native"
+import React, { useContext, useEffect, useState } from "react";
+import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
-import { LocationContext } from '../../../services/location/location.context';
+import { LocationContext } from "../../../services/location/location.context";
 const SearchContainer = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-  position: absolute;
-  z-index:900;
-  top:40px;
-  width:100%;
+    padding: ${props => props.theme.space[3]};
+    position: absolute;
+    z-index: 900;
+    top: 40px;
+    width: 100%;
 `;
 
 export const Search = () => {
     const { keyword, search } = useContext(LocationContext);
     const [searchKeyword, setSearchKeyword] = useState(keyword);
     useEffect(() => {
-        setSearchKeyword(keyword)
-    }, [keyword])
+        setSearchKeyword(keyword);
+    }, [keyword]);
     return (
         <SearchContainer>
             <Searchbar
@@ -23,12 +23,12 @@ export const Search = () => {
                 icon="map"
                 value={searchKeyword}
                 onSubmitEditing={() => {
-                    search(searchKeyword)
+                    search(searchKeyword);
                 }}
-                onChangeText={(text) => {
-                    setSearchKeyword(text)
+                onChangeText={text => {
+                    setSearchKeyword(text);
                 }}
             />
         </SearchContainer>
-    )
-}
+    );
+};

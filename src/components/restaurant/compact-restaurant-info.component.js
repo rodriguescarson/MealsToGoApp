@@ -6,34 +6,34 @@ import { Platform } from "react-native";
 import { Text } from "../typography/text.component";
 
 const CompactImage = styled.Image`
-  border-radius: 10px;
-  width: 120px;
-  height: 100px;
+    border-radius: 10px;
+    width: 120px;
+    height: 100px;
 `;
 
 const CompactWebview = styled(WebView)`
-  border-radius: 10px;
-  width: 120px;
-  height: 100px;
+    border-radius: 10px;
+    width: 120px;
+    height: 100px;
 `;
 
 const Item = styled.View`
-  padding: 10px;
-  max-width: 120px;
-  align-items: center;
+    padding: 10px;
+    max-width: 120px;
+    align-items: center;
 `;
 
 const isAndroid = Platform.OS === "android";
 
 export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
-  const Image = isAndroid && isMap ? CompactWebview : CompactImage;
+    const Image = isAndroid && isMap ? CompactWebview : CompactImage;
 
-  return (
-    <Item>
-      <Image source={{ uri: restaurant.photos[0] }} />
-      <Text center variant="caption" numberOfLines={3}>
-        {restaurant.name}
-      </Text>
-    </Item>
-  );
+    return (
+        <Item>
+            <Image source={{ uri: restaurant.photos[0] }} />
+            <Text center variant="caption" numberOfLines={3}>
+                {restaurant.name}
+            </Text>
+        </Item>
+    );
 };

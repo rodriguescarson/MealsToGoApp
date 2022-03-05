@@ -8,7 +8,7 @@ export const FadeInView = ({ duration = 1500, ...props }) => {
         Animated.timing(fadeAnim, {
             toValue: 1,
             duration: duration,
-            useNativeDriver: true,
+            useNativeDriver: true
         }).start();
     }, [fadeAnim, duration]);
 
@@ -16,7 +16,7 @@ export const FadeInView = ({ duration = 1500, ...props }) => {
         <Animated.View // Special animatable View
             style={{
                 ...props.style,
-                opacity: fadeAnim, // Bind opacity to animated value
+                opacity: fadeAnim // Bind opacity to animated value
             }}
         >
             {props.children}

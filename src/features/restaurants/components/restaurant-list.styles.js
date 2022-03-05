@@ -3,6 +3,6 @@ import { FlatList } from "react-native";
 
 export const RestaurantList = styled(FlatList).attrs({
     contentContainerStyle: {
-        padding: 16,
-    },
+        padding: 16
+    }
 })``;

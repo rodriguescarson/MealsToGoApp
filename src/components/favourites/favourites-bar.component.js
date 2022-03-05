@@ -7,9 +7,9 @@ import { Text } from "../typography/text.component";
 import { Card } from "react-native-paper";
 
 const FavouritesWrapper = styled(Card)`
-  padding: 10px;
-  z-index: 999;
-  border-radius: 15px;
+    padding: 10px;
+    z-index: 999;
+    border-radius: 15px;
 `;
 export const FavouritesBar = ({ favourites, onNavigate }) => {
     if (!favourites.length) {
@@ -22,14 +22,14 @@ export const FavouritesBar = ({ favourites, onNavigate }) => {
             </Spacer>
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {favourites.map((restaurant) => {
+                {favourites.map(restaurant => {
                     const key = restaurant.name;
                     return (
                         <Spacer key={key} position="left" size="medium">
                             <TouchableOpacity
                                 onPress={() =>
                                     onNavigate("RestaurantDetail", {
-                                        restaurant,
+                                        restaurant
                                     })
                                 }
                             >
